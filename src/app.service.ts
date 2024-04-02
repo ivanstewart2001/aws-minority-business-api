@@ -11,9 +11,9 @@ export class AppService {
 
   constructor() {
     AWS.config.update({
-      region: 'us-east-1', // replace with your region
-      accessKeyId: 'AKIAZROJAG5AHEAVF3Z7', // replace with your Access Key ID
-      secretAccessKey: 'f09kL+106HkgRo6Qex0LK1ejtTWhG66W8lZoWyqf', // replace with your Secret Access Key
+      region: 'us-east-1',
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     });
 
     this.dynamo = new AWS.DynamoDB.DocumentClient();
